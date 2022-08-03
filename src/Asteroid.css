@@ -1,0 +1,14 @@
+
+.errorclass{
+    font-size: large;
+    color: rgb(235, 60, 60);
+    font-weight: 400;
+}
+.displaydata{
+  font-size: 30px;
+  color: black;
+  margin: 20px;
+}
+.valuedata{
+  margin-left:15px;
+}
