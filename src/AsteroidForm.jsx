@@ -3,10 +3,14 @@ import TextField from "@material-ui/core/TextField";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
+import Container from "@material-ui/core/Container";
+
 
 const AsteroidForm = (props) => {
   return (
     <>
+    <Container>
+        <Card style={{ marginTop:"40px", backgroundColor: "#c5cdf7" }}>
       <CardContent>
         <div className="displaydata">
           <label>Name:-</label>
@@ -31,6 +35,9 @@ const AsteroidForm = (props) => {
           </span>
         </div>
       </CardContent>
+      
+    </Card>
+    </Container>
     </>
   );
 };

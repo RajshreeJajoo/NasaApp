@@ -20,14 +20,13 @@ const[randomData,setRandomdata]=useState([]);
       axios.get(
           `https://api.nasa.gov/neo/rest/v1/neo/${astid}?api_key=9mfvC2LtoPfOd5fLd6U3e6Gum0Agt3r8BYcW4rWs`)
         .then((res) => {
-        // let len = res.data.near_earth_objects.length;
-        // let randomId = Math.floor(Math.random() * len);
-        // setRandomdata(res.data.near_earth_objects[randomId]);
-        console.log(res);
         setRandomdata(res.data)
+        setError((pre) => false);
       })       
        .catch((err) => {
-          setError(pre=>true);
+        setResponse(pre=>false);
+        setError(pre=>true);
+
         });
     };
   const randomId = () => {
@@ -35,18 +34,21 @@ const[randomData,setRandomdata]=useState([]);
      axios.get(
       `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=9mfvC2LtoPfOd5fLd6U3e6Gum0Agt3r8BYcW4rWs`)
       .then((res) => {
-          console.log("response",res.data);
-      let len = res.data.near_earth_objects.length;
+        // setError((pre) => false);
+       let len = res.data.near_earth_objects.length;
         let randomId = Math.floor(Math.random() * len);
         setRandomdata(res.data.near_earth_objects[randomId]);
       })
       .catch((err) => {
+        setResponse(pre=>false);
         setError(pre=>true);
       });
   };
 
   const asteroidid = (e) => {
     setAstid(e.target.value);
+    setResponse(false);
+    setError(false);
   };
   const resetid = (e) => {
     setAstid("");
@@ -55,7 +57,7 @@ const[randomData,setRandomdata]=useState([]);
     setRandomdata([]);
   };
   return (
-    <>
+        <>
       <Container fixed>
         <TextField
           id="standard-basic"
@@ -64,14 +66,13 @@ const[randomData,setRandomdata]=useState([]);
           onChange={asteroidid}
           value={astid}
           name="astid"
-        />
-
+        /> 
         <Button
           style={{ marginLeft: "20px", backgroundColor: "rgb(141, 139, 245)" }}
             onClick={sumbitId} disabled={!astid}
           variant="outlined"
         >
-          Sumbit
+          Sumbit Id
         </Button>
 
         <Button
