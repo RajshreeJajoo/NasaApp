@@ -37,6 +37,7 @@ const[randomData,setRandomdata]=useState([]);
         // setError((pre) => false);
        let len = res.data.near_earth_objects.length;
         let randomId = Math.floor(Math.random() * len);
+       setAstid(randomId);
         setRandomdata(res.data.near_earth_objects[randomId]);
       })
       .catch((err) => {
