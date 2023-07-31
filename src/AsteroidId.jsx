@@ -59,7 +59,8 @@ const[randomData,setRandomdata]=useState([]);
   };
   return (
         <>
-      <Container fixed>
+      {/* <Container fixed> */}
+      <div>
         <TextField
           id="standard-basic"
           type="number"
@@ -69,7 +70,7 @@ const[randomData,setRandomdata]=useState([]);
           name="astid"
         /> 
         <Button
-          style={{ marginLeft: "20px", backgroundColor: "rgb(141, 139, 245)" }}
+          style={{ marginLeft: "20px", backgroundColor: "rgb(141, 139, 245)",borderRadius:25 }}
             onClick={sumbitId} disabled={!astid}
           variant="outlined"
         >
@@ -78,7 +79,7 @@ const[randomData,setRandomdata]=useState([]);
 
         <Button
           variant="outlined"
-          style={{ marginLeft: "20px", backgroundColor: "rgb(141, 139, 245)" }}
+          style={{ marginLeft: "20px", backgroundColor: "rgb(141, 139, 245)",borderRadius:25 }}
           onClick={randomId}
         >
           Random Id
@@ -86,7 +87,7 @@ const[randomData,setRandomdata]=useState([]);
 
         <Button
           variant="outlined"
-          style={{ marginLeft: "20px", backgroundColor: "rgb(141, 139, 245)" }}
+          style={{ marginLeft: "20px", backgroundColor: "rgb(141, 139, 245)",borderRadius:25 }}
           onClick={resetid}
         >
           Reset
@@ -101,7 +102,7 @@ const[randomData,setRandomdata]=useState([]);
       {error &&
             <ErrorForm/>
       }
-      </Container>
+      </div>
     </>
   );
 };

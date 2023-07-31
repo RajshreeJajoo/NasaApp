@@ -10,7 +10,8 @@ const AsteroidForm = (props) => {
   return (
     <>
     <Container>
-        <Card style={{ marginTop:"40px", backgroundColor: "#c5cdf7" }}>
+        <Card style={{ marginTop:"40px",background: "linear-gradient(to bottom, #bad2ec 0%, #9b98f0 100%)"
+ }}>
       <CardContent>
         <div className="displaydata">
           <label>Name:-</label>
